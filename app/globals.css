@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-white text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .input-base {
+    @apply w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm
+           placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200
+           focus:border-gray-300 transition-colors;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gray-900 px-4 py-2
+           text-sm font-medium text-white hover:bg-gray-700 transition-colors
+           focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200
+           bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50
+           transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-1.5
+           text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors
+           focus:outline-none;
+  }
+  .card {
+    @apply rounded-xl border border-gray-200 bg-white shadow-sm;
+  }
+}
+
+/* React Flow — custom cursor */
+.react-flow__pane {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='4' fill='%23374151' /%3E%3Cline x1='10' y1='1' x2='10' y2='7' stroke='%23374151' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='10' y1='13' x2='10' y2='19' stroke='%23374151' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='1' y1='10' x2='7' y2='10' stroke='%23374151' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='13' y1='10' x2='19' y2='10' stroke='%23374151' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") 10 10, crosshair;
+}
+.react-flow__pane.dragging,
+.react-flow__pane.draggable:active {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='5' fill='%23111827' /%3E%3Cline x1='10' y1='1' x2='10' y2='7' stroke='%23111827' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='10' y1='13' x2='10' y2='19' stroke='%23111827' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='1' y1='10' x2='7' y2='10' stroke='%23111827' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='13' y1='10' x2='19' y2='10' stroke='%23111827' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") 10 10, grabbing;
+}
+
+/* React Flow overrides */
+.react-flow__edge-path {
+  stroke: #d1d5db;
+  stroke-width: 2;
+}
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #374151;
+}
+.react-flow__handle {
+  background: #9ca3af !important;
+  border: 2px solid white !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+.react-flow__handle:hover {
+  background: #374151 !important;
+}

@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# Drizzle generated migrations (optional — remove if you want to track them)
+# drizzle/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local uploads (development)
+uploads/
+
+# Claude memory / session files
+.claude/
